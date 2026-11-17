@@ -900,16 +900,22 @@
    "categoryCarousel": {
       "titleOne": "ULTIMATE",
       "subLineOne": "HORIZONS",
+      "descOne": "Encounter paradise with every adventure.",
       "titleTwo": "ULTIMATE",
       "subLineTwo": "INDULGENCE",
+      "descTwo": "Relish top-notch gourmet dining and unparalleled experiences.",
       "titleThree": "ULTIMATE",
       "subLineThree": "BALANCE",
+      "descThree": "Discover first-class health and wellness leisure activities to restore your body and mind.",
       "titleFour": "ULTIMATE",
       "subLineFour": "MOMENTS",
+      "descFour": "Enjoy a range of the most extraordinary Cardmember benefits worldwide, to turn your everyday into special occasions.",
       "titleFive": "ULTIMATE",
       "subLineFive": "DELIGHTS",
+      "descFive": "Be delighted by surprise experiences and invitations to exclusive events.",
       "titleSix": "ULTIMATE",
-      "subLineSix": "DEDICATION"
+      "subLineSix": "DEDICATION",
+      "descSix": "Experience dedicated service at its best."
    },
    "footer": {
       "paragraph1": "Citibank full disclaimers, terms and conditions apply to individual products and banking services. Please visit <a href='http://www.citibank.com.sg' target='_blank'>www.citibank.com.sg</a> for full details.",
@@ -923,5 +929,9 @@
    "Golftnc": {
       "paragraph1": "",
       "paragraph2": ""
+   },
+   "borrowNotice": {
+      "title": "To borrow or not to borrow? Borrow only if you can repay!",
+      "terms": "Terms and Conditions apply."
    }
 }
