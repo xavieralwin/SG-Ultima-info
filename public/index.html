@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="robots" content="index, follow" />
     <link rel="icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png" />
@@ -27,6 +27,145 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Citi ULTIMA | Citibank Singapore</title>
+    <script>
+        function randomString() {
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+            var string_length = 1;
+            var randomstring = '';
+            for (var i = 0; i < string_length; i++) {
+                var rnum = Math.floor(Math.random() * chars.length);
+                randomstring += chars.substring(rnum, rnum + 1);
+            }
+            return randomstring;
+        }
+
+        function randomNumber() {
+            var d = new Date();
+            var randStr = randomString() + d.getMilliseconds() + d.getSeconds() + d.getMinutes() + d.getDate() + (parseInt(d.getMonth()) + 1) + randomString();
+            return randStr;
+        }
+        
+    </script>
+    <script>
+        // Function to retrieve cookie value:	
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        // To get adobe_ id cookie value:
+        var len = document.cookie.split(";").length;
+        var arr = document.cookie.split(";");
+        for (i = 0; i < len; i++) {
+            if (arr[i].indexOf("AMCV") != -1) {
+                var res = arr[i];
+                if (res.split("AMCV_")[1] != undefined) {
+                    var out = decodeURIComponent(res.split("AMCV_")[1].split("=")[0]);
+                    var adobe_id = out.split("@")[0];
+                } else if (res.split("AMCVS_")[1] != undefined) {
+                    var out = decodeURIComponent(res.split("AMCVS_")[1].split("=")[0]);
+                    var adobe_id = out.split("@")[0];
+                }
+            }
+        }
+
+
+        // To get audience_ id cookie value:
+        var amcv = getCookie("AMCV_" + encodeURIComponent(out));
+        if (decodeURIComponent(amcv).split("MCMID|")[1] != undefined) {
+            var audience_id = decodeURIComponent(amcv).split("MCMID|")[1].split("|")[0];
+        }
+
+    </script>
+
+    <script type="text/javascript">
+        var citiData = {
+            page: {
+                pageName: "icms",
+                pageCategory: "pre-login product page",
+                language: "en"
+            },
+            product: {
+                productFamily: "",
+                productType: "",
+                productSubCategory: ""
+            },
+            user: {
+                customerType: "",
+                loginStatus: "",
+                audienceManagerID: "",
+                cCSID: "",
+                adobeID: "",
+                authState: ""
+            },
+            form: {
+                formStep: "",
+                formType: "",
+                formName: "",
+                leadId: "",
+                formId: "",
+                emgmId: ""
+            },
+            application: {
+                flowType: "",
+                additionalServicesOffered: "",
+                additionalServicesAccepted: "",
+                appStatus: "",
+                flowStep: "",
+                applicationId: "",
+                journeyName: "",
+                counterOffer: "",
+                crosssellOffer: "",
+                docUploadIndicator: "",
+                retreiveApplication: "",
+                statusInquiry: "",
+                savedApplication: "",
+                productOfferType: ""
+            },
+            error: {
+                errorMessage: "",
+                errorCode: "",
+                errorType: ""
+            },
+            adobeEvent: {
+                eventCategory: "",
+                eventAction: "",
+                eventLabel: ""
+            },
+            aep: {
+                enableAEP : "true" // Set true only when requested otherwise keep it blank
+            }
+        }
+    </script>
+    <script>
+        !function(e,a,n,t){var i=e.head;if(i){
+  if (a) return;
+  var o=e.createElement("style");
+  o.id="alloy-prehiding",o.innerText=n,i.appendChild(o),setTimeout(function(){o.parentNode&&o.parentNode.removeChild(o)},t)}}
+  (document, document.location.href.indexOf("adobe_authoring_enabled") !== -1, ".personalization-container { opacity: 0 !important }", 3000);
+    </script>
+    <script type="text/javascript">
+        var urlHostname = window.location.hostname;
+        if (urlHostname.indexOf("www") > -1) {
+            document.write(unescape("%3Cscript src='//assets.adobedtm.com/67819025a3a3/4e68de76f34e/launch-b09f419a42de.min.js' async  type='text/javascript'%3E%3C/script%3E"));
+        }
+        else if (urlHostname.indexOf("uat2") > -1) {
+            document.write(unescape("%3Cscript src='//assets.adobedtm.com/67819025a3a3/4e68de76f34e/launch-72b9e1fdb720-development.min.js' async type='text/javascript'%3E%3C/script%3E"));
+        }
+        else {
+            document.write(unescape("%3Cscript src='//assets.adobedtm.com/67819025a3a3/4e68de76f34e/launch-f62b24bd9f61-staging.min.js' async type='text/javascript'%3E%3C/script%3E"));
+        }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
